@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "@fontsource-variable/archivo/wdth.css";
+
+@theme {
+  --font-heading: "Archivo Variable", "Arial Narrow", sans-serif;
+  --font-body: "Archivo Variable", system-ui, sans-serif;
+
+  --color-brand: #0b1a3d;
+  --color-brand-dark: #061029;
+  --color-brand-light: #e9edf6;
+  --color-accent: #c99a2e;
+  --color-accent-light: #f3e3b6;
+  --color-accent-hover: #b4861f;
+  --color-royal: #1d4fd0;
+  --color-kraft: #c6a27b;
+  --color-kraft-light: #f1e7d8;
+  --color-text: #141f38;
+  --color-text-secondary: #3e4a63;
+  --color-text-muted: #6a7389;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f7fa;
+  --color-border: #e2e6ee;
+  --color-footer: #081433;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    overflow-x: clip;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-surface-muted font-body text-text antialiased;
+  }
+
+  #root {
+    @apply flex min-h-screen flex-col;
+  }
+
+  ::selection {
+    @apply bg-accent-light text-brand;
+  }
+}
+
+/* Expanded, heavy Archivo — echoes the dimensions printed on the boxes. */
+@utility font-display {
+  font-family: var(--font-heading);
+  font-stretch: 118%;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}

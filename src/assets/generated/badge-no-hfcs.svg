@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" aria-hidden="true">
+  <circle cx="150" cy="150" r="140" fill="#fff" stroke="#1d4fd0" stroke-width="14"/>
+  <circle cx="150" cy="150" r="116" fill="none" stroke="#1d4fd0" stroke-width="3"/>
+  <!-- corn cob -->
+  <path d="M150 62c-26 0-40 34-40 76s14 76 40 76 40-34 40-76-14-76-40-76z" fill="#f2c418"/>
+  <g stroke="#d9a400" stroke-width="5" fill="none">
+    <path d="M114 105h72M110 135h80M112 165h76M120 195h60"/>
+    <path d="M137 66v144M163 66v144"/>
+  </g>
+  <path d="M150 214c-34-6-58-34-62-70 26 8 46 32 62 70zM150 214c34-6 58-34 62-70-26 8-46 32-62 70z" fill="#6db33f"/>
+  <!-- strike-through -->
+  <line x1="68" y1="232" x2="232" y2="68" stroke="#e3263a" stroke-width="18" stroke-linecap="round"/>
+</svg>

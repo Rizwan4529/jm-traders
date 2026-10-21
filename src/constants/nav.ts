@@ -17,15 +17,17 @@ export const ROUTES = {
   about: "/about",
   catalogue: "/catalogue",
   contact: "/contact",
-  imprint: "/imprint",
+  // Legal notice disabled for now.
+  // imprint: "/imprint",
   privacy: "/privacy",
+  terms: "/terms",
 } as const;
 
 export const mainNav: NavLinkItem[] = [
   { key: "products", href: ROUTES.products },
   { key: "wholesale", href: ROUTES.wholesale },
   { key: "about", href: ROUTES.about },
-  { key: "catalogue", href: ROUTES.catalogue },
+  // { key: "catalogue", href: ROUTES.catalogue },
   { key: "contact", href: ROUTES.contact },
 ];
 
@@ -41,7 +43,8 @@ export const footerNav = {
     { key: "contact", href: ROUTES.contact },
   ],
   legal: [
-    { key: "imprint", href: ROUTES.imprint },
+    // { key: "imprint", href: ROUTES.imprint },
     { key: "privacy", href: ROUTES.privacy },
+    { key: "terms", href: ROUTES.terms },
   ],
 } satisfies Record<string, NavLinkItem[]>;

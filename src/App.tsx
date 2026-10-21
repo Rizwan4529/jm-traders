@@ -37,8 +37,10 @@ const App = () => {
           <Route path={ROUTES.about} element={<AboutPage />} />
           <Route path={ROUTES.catalogue} element={<CataloguePage />} />
           <Route path={ROUTES.contact} element={<ContactPage />} />
-          <Route path={ROUTES.imprint} element={<LegalPage variant="imprint" />} />
+          {/* Legal notice disabled for now:
+          <Route path={ROUTES.imprint} element={<LegalPage variant="imprint" />} /> */}
           <Route path={ROUTES.privacy} element={<LegalPage variant="privacy" />} />
+          <Route path={ROUTES.terms} element={<LegalPage variant="terms" />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

@@ -1,23 +1,20 @@
 import type { CSSProperties } from "react";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import { useParams } from "react-router-dom";
 import { ROUTES } from "../../constants/nav";
 import { JELLY_CATALOG_URL } from "../../constants/site";
-import { flavourPath, flavours, getFlavour } from "../../data/flavours";
+import { flavours, getFlavour } from "../../data/flavours";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import { useContent } from "../../i18n/useContent";
 import CtaBanner from "../sections/CtaBanner";
-import FlavourGrid from "../sections/flavours/FlavourGrid";
+import FlavourCard from "../sections/flavours/FlavourCard";
 import JellyFacts from "../sections/flavours/JellyFacts";
 import Button from "../ui/Button";
+import Carousel from "../ui/Carousel";
 import PageHero from "../ui/PageHero";
 import QuoteButton from "../ui/QuoteButton";
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
-import SmartLink from "../ui/SmartLink";
 import NotFoundPage from "./NotFoundPage";
-
-const RELATED_COUNT = 4;
 
 const FlavourPage = () => {
   const { slug } = useParams();
@@ -32,11 +29,11 @@ const FlavourDetail = ({ slug }: { slug: string }) => {
   const copy = t.flavours[flavour.slug];
   usePageMeta(t.meta.flavour(copy.name));
 
-  const at = (offset: number) =>
-    flavours[(index + offset + flavours.length) % flavours.length];
-  const previous = at(-1);
-  const next = at(1);
-  const related = Array.from({ length: RELATED_COUNT }, (_, i) => at(i + 1));
+  // Every other flavour, starting with the next one in the range.
+  const others = Array.from(
+    { length: flavours.length - 1 },
+    (_, i) => flavours[(index + i + 1) % flavours.length],
+  );
   const quoteMessage = t.common.flavourQuoteMessage(copy.name);
 
   return (
@@ -108,30 +105,17 @@ const FlavourDetail = ({ slug }: { slug: string }) => {
       </Section>
 
       <Section tone="surface">
-        <SectionHeading
-          title={t.flavourPage.moreTitle}
-          action={
-            <div className="flex gap-2">
-              {[
-                { item: previous, label: t.flavourPage.previous, Icon: HiChevronLeft },
-                { item: next, label: t.flavourPage.next, Icon: HiChevronRight },
-              ].map(({ item, label, Icon }) => (
-                <SmartLink
-                  key={label}
-                  href={flavourPath(item.slug)}
-                  aria-label={`${label}: ${t.flavours[item.slug].name}`}
-                  title={t.flavours[item.slug].name}
-                  className="flex size-11 items-center justify-center rounded-md border border-brand/25 text-brand transition-colors hover:border-brand hover:bg-brand-light"
-                >
-                  <Icon aria-hidden="true" className="size-5" />
-                </SmartLink>
-              ))}
-            </div>
-          }
+        {/* Keyed by flavour so the track resets to the start on navigation. */}
+        <Carousel
+          key={flavour.slug}
+          header={<SectionHeading title={t.flavourPage.moreTitle} />}
+          label={t.flavourPage.moreTitle}
+          previousLabel={t.flavourPage.previous}
+          nextLabel={t.flavourPage.next}
+          items={others.map((item) => (
+            <FlavourCard key={item.slug} flavour={item} />
+          ))}
         />
-        <div className="mt-10">
-          <FlavourGrid key={flavour.slug} items={related} />
-        </div>
       </Section>
 
       <CtaBanner message={quoteMessage} />

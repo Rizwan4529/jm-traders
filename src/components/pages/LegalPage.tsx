@@ -2,11 +2,12 @@ import type { ReactNode } from "react";
 import { ROUTES } from "../../constants/nav";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import { useContent } from "../../i18n/useContent";
-import ContactList from "../ui/ContactList";
+// import ContactList from "../ui/ContactList";
 import PageHero from "../ui/PageHero";
 import Section from "../ui/Section";
 
-type LegalVariant = "imprint" | "privacy";
+// Legal notice ("imprint") disabled for now; re-add it here with its content.
+type LegalVariant = "privacy" | "terms";
 
 const LegalSectionBlock = ({
   heading,
@@ -27,7 +28,7 @@ const LegalPage = ({ variant }: { variant: LegalVariant }) => {
   const { t } = useContent();
   usePageMeta(t.meta[variant]);
   const page = t.legal[variant];
-  const imprint = variant === "imprint" ? t.legal.imprint : null;
+  // const imprint = variant === "imprint" ? t.legal.imprint : null;
 
   return (
     <>
@@ -42,7 +43,7 @@ const LegalPage = ({ variant }: { variant: LegalVariant }) => {
 
       <Section tone="surface">
         <div className="max-w-3xl space-y-8">
-          {imprint ? (
+          {/* {imprint ? (
             <>
               <LegalSectionBlock heading={imprint.company.heading}>
                 <address className="not-italic">
@@ -60,7 +61,7 @@ const LegalPage = ({ variant }: { variant: LegalVariant }) => {
                 />
               </LegalSectionBlock>
             </>
-          ) : null}
+          ) : null} */}
 
           {page.sections.map((section) => (
             <LegalSectionBlock key={section.heading} heading={section.heading}>

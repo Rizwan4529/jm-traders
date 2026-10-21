@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { HALAL_BADGE } from "../../../data/certifications";
 import { flavourPath, type Flavour } from "../../../data/flavours";
 import { useContent } from "../../../i18n/useContent";
 import SmartLink from "../../ui/SmartLink";
@@ -11,8 +12,18 @@ const FlavourCard = ({ flavour }: { flavour: Flavour }) => {
     <SmartLink
       href={flavourPath(flavour.slug)}
       style={{ "--flavour": flavour.color } as CSSProperties}
-      className="group flex h-full flex-col rounded-2xl bg-[color-mix(in_oklab,var(--flavour)_14%,white)] p-4 transition-colors duration-200 hover:bg-[color-mix(in_oklab,var(--flavour)_24%,white)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:p-5"
+      className="group relative flex h-full flex-col rounded-2xl bg-[color-mix(in_oklab,var(--flavour)_14%,white)] p-4 transition-colors duration-200 hover:bg-[color-mix(in_oklab,var(--flavour)_24%,white)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:p-5"
     >
+      <img
+        src={HALAL_BADGE}
+        alt={t.certifications.halal.title}
+        title={t.certifications.halal.text}
+        width={32}
+        height={32}
+        loading="lazy"
+        decoding="async"
+        className="absolute top-3 right-3 z-10 size-7 rounded-full bg-white shadow-sm sm:size-8"
+      />
       <img
         src={flavour.image}
         alt={t.flavourPage.imageAlt(copy.name)}

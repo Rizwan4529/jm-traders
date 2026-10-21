@@ -1,17 +1,6 @@
-import fdaBadge from "../../assets/home/ic1-26-300x300.min.webp";
-import halalBadge from "../../assets/home/ic2-300x300.webp";
-import noHfcsBadge from "../../assets/generated/badge-no-hfcs.svg";
-import vegetarianBadge from "../../assets/generated/badge-vegetarian.svg";
-import type { Content } from "../../content/content";
+import { CERTIFICATION_BADGES } from "../../data/certifications";
 import { useContent } from "../../i18n/useContent";
 import { cx } from "../../lib/cx";
-
-const badges: { key: keyof Content["certifications"]; image: string }[] = [
-  { key: "halal", image: halalBadge },
-  { key: "vegetarian", image: vegetarianBadge },
-  { key: "noHfcs", image: noHfcsBadge },
-  { key: "fda", image: fdaBadge },
-];
 
 type CertificationLayout = "row" | "grid" | "stack";
 
@@ -37,7 +26,7 @@ const CertificationStrip = ({
 
   return (
     <ul className={cx("grid gap-x-6 gap-y-6", layoutClasses[layout], className)}>
-      {badges.map(({ key, image }) => (
+      {CERTIFICATION_BADGES.map(({ key, image }) => (
         <li key={key} className="flex items-center gap-3">
           <img
             src={image}

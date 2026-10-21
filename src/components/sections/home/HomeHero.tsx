@@ -24,11 +24,11 @@ const HomeHero = () => {
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 right-[-10%] size-[42rem] rounded-full bg-royal/25 blur-3xl"
       />
-      <Container className="relative grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
+      <Container className="relative grid items-center gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10">
         <div>
           <motion.h1
             {...rise(0)}
-            className="font-display text-[2.6rem] leading-[1.02] text-balance sm:text-6xl lg:text-[4.25rem]"
+            className="font-display max-w-[13em] text-[clamp(1.75rem,8.2vw,2.4rem)] leading-[1.05] text-balance sm:text-[3.1rem] lg:text-[2.8rem] xl:text-[3.6rem]"
           >
             {t.home.hero.title}
           </motion.h1>

@@ -63,7 +63,7 @@ const FlavourStage = () => {
       <div
         role="group"
         aria-label={t.home.hero.pickerLabel}
-        className="mt-6 flex max-w-md flex-wrap justify-center gap-2.5"
+        className="mt-6 grid grid-cols-7 gap-2.5"
       >
         {flavours.map((flavour) => {
           const isActive = flavour.slug === active.slug;

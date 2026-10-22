@@ -281,7 +281,7 @@ const en = {
 
   home: {
     hero: {
-      title: "Jelly Cups And Packaging, Supplied For Trade",
+      title: "Reliable Wholesale Supply For Traders",
       text: "JM Trader imports Jelly Jungle cup jelly in 14 flavours and supplies gastro packaging to retailers, wholesalers and restaurants.",
       pickerLabel: "Choose A Flavour",
     },
@@ -1085,7 +1085,7 @@ const de: Content = {
 
   home: {
     hero: {
-      title: "Jelly-Cups Und Verpackungen Für Den Handel",
+      title: "Zuverlässiger Großhandel Für Händler",
       text: "JM Trader importiert Jelly Jungle Cup-Jelly in 14 Sorten und liefert Gastro-Verpackungen an Einzelhandel, Großhandel und Gastronomie.",
       pickerLabel: "Sorte Wählen",
     },

@@ -4,8 +4,11 @@ import { useContent } from "../../../i18n/useContent";
 import Button from "../../ui/Button";
 import Container from "../../ui/Container";
 import QuoteButton from "../../ui/QuoteButton";
-import CertificationStrip from "../CertificationStrip";
-import FlavourStage from "./FlavourStage";
+// Certification strip disabled in the hero for now; restore together with its block below.
+// import CertificationStrip from "../CertificationStrip";
+// Flavour picker replaced by HeroShowcase for now; restore together with its block below.
+// import FlavourStage from "./FlavourStage";
+import HeroShowcase from "./HeroShowcase";
 
 const HomeHero = () => {
   const { t } = useContent();
@@ -47,9 +50,9 @@ const HomeHero = () => {
               {t.common.viewFlavours}
             </Button>
           </motion.div>
-          <motion.div {...rise(0.32)} className="mt-12 border-t border-white/15 pt-8">
+          {/* <motion.div {...rise(0.32)} className="mt-12 border-t border-white/15 pt-8">
             <CertificationStrip inverted layout="grid" />
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <motion.div
@@ -57,7 +60,8 @@ const HomeHero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: duration + 0.2, delay: 0.15, ease: "easeOut" }}
         >
-          <FlavourStage />
+          {/* <FlavourStage /> */}
+          <HeroShowcase />
         </motion.div>
       </Container>
     </section>

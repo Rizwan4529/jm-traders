@@ -8,6 +8,7 @@ import ContactPage from "./components/pages/ContactPage";
 import FlavourPage from "./components/pages/FlavourPage";
 import HomePage from "./components/pages/HomePage";
 import JellyCupsPage from "./components/pages/JellyCupsPage";
+import JellyDrinksPage from "./components/pages/JellyDrinksPage";
 import LegalPage from "./components/pages/LegalPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 import PackagingPage from "./components/pages/PackagingPage";
@@ -32,6 +33,7 @@ const App = () => {
           <Route path={ROUTES.products} element={<ProductsPage />} />
           <Route path={ROUTES.jellyCups} element={<JellyCupsPage />} />
           <Route path={`${ROUTES.jellyCups}/:slug`} element={<FlavourPage />} />
+          <Route path={ROUTES.jellyDrinks} element={<JellyDrinksPage />} />
           <Route path={ROUTES.packaging} element={<PackagingPage />} />
           <Route path={ROUTES.wholesale} element={<WholesalePage />} />
           <Route path={ROUTES.about} element={<AboutPage />} />

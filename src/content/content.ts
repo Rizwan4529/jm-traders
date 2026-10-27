@@ -7,7 +7,9 @@
  * the active language (see `formatNumber` / `formatDimensions`).
  */
 import type { FlavourSlug } from "../data/flavours";
+import type { DrinkSlug } from "../data/drinks";
 import type { MenuBoxId, PizzaBoxId } from "../data/packaging";
+import type { ProductionVideoId } from "../data/videos";
 import type { Language } from "../i18n/languages";
 
 type Copy = { title: string; text: string };
@@ -23,17 +25,22 @@ const en = {
     home: {
       title: "Jelly Cups And Gastro Packaging For Trade",
       description:
-        "JM Trader supplies Jelly Jungle cup jelly in 14 flavours and gastro packaging to retailers, wholesalers and restaurants.",
+        "JM Trader supplies Jelly Jungle cup jelly in 14 flavours, jelly drinks and gastro packaging to retailers, wholesalers and restaurants.",
     },
     products: {
       title: "Products",
       description:
-        "Jelly Jungle cup jelly and gastro packaging from JM Trader.",
+        "Jelly Jungle cup jelly, jelly drinks and gastro packaging from JM Trader.",
     },
     jellyCups: {
       title: "Jelly Jungle Jelly Cups",
       description:
         "14 flavours of Jelly Jungle cup jelly: vegetarian, halal and without high-fructose corn syrup. 144 cups per carton.",
+    },
+    jellyDrinks: {
+      title: "Jelly Jungle Jelly Drinks",
+      description:
+        "Jelly Jungle jelly drinks in 250 ml bottles: pineapple, orange and mango. Supplied by the carton or container.",
     },
     flavour: (name: string) => ({
       title: `${name} Jelly Cups`,
@@ -114,6 +121,7 @@ const en = {
     home: "Home",
     products: "Products",
     jellyCups: "Jelly Cups",
+    jellyDrinks: "Jelly Drinks",
     packaging: "Packaging",
     wholesale: "Wholesale",
     about: "About Us",
@@ -127,7 +135,7 @@ const en = {
 
   footer: {
     tagline:
-      "General trading, import and export. Jelly Jungle cup jelly and gastro packaging for retail, wholesale and food service.",
+      "General trading, import and export. Jelly Jungle cup jelly, jelly drinks and gastro packaging for retail, wholesale and food service.",
     columns: {
       products: "Products",
       company: "Company",
@@ -244,6 +252,11 @@ const en = {
       text: "Fruit-flavoured cup jelly in 14 flavours. Vegetarian, halal and made without high-fructose corn syrup.",
       cta: "Explore Jelly Cups",
     },
+    jellyDrinks: {
+      title: "Jelly Jungle Jelly Drinks",
+      text: "Drinkable fruit jelly in 250 ml bottles, in pineapple, orange and mango.",
+      cta: "Explore Jelly Drinks",
+    },
     packaging: {
       title: "Gastro Packaging",
       text: "Pizza boxes, calzone boxes and menu boxes from 100 pieces, plain kraft or printed with your brand.",
@@ -282,16 +295,30 @@ const en = {
   home: {
     hero: {
       title: "Reliable Wholesale Supply For Traders",
-      text: "JM Trader imports Jelly Jungle cup jelly in 14 flavours and supplies gastro packaging to retailers, wholesalers and restaurants.",
+      text: "JM Trader imports Jelly Jungle jelly cups and jelly drinks, and supplies gastro packaging to retailers, wholesalers and restaurants.",
       pickerLabel: "Choose A Flavour",
     },
     flavours: {
       title: "14 Flavours, One Recognisable Cup",
       text: "Every Jelly Jungle cup has the same shape and lid, so a mixed range looks consistent on the shelf.",
     },
+    production: {
+      title: "See How Jelly Jungle Is Made",
+      text: "Footage from the Jelly Jungle production line, where the cups are filled, sealed and cooled.",
+      videos: {
+        sealing: {
+          title: "Filled And Sealed",
+          text: "Cups leave the sealing line in rows and drop straight into a water bath.",
+        },
+        cooling: {
+          title: "Rinsed And Cooled",
+          text: "Sealed cups are rinsed and cooled under running water.",
+        },
+      } satisfies Record<ProductionVideoId, Copy>,
+    },
     lines: {
-      title: "Two Product Lines",
-      text: "Snacks for the shelf and packaging for the kitchen, from one supplier.",
+      title: "Three Product Lines",
+      text: "Snacks and drinks for the shelf, packaging for the kitchen, all from one supplier.",
     },
     about: {
       title: "A Trading Partner, Not A Middleman",
@@ -303,7 +330,7 @@ const en = {
   products: {
     hero: {
       title: "Products",
-      text: "Jelly Jungle cup jelly for retail and wholesale, and gastro packaging for food service.",
+      text: "Jelly Jungle cup jelly and jelly drinks for retail and wholesale, and gastro packaging for food service.",
     },
     downloads: {
       title: "Product Catalogues",
@@ -346,6 +373,44 @@ const en = {
         "Jelly Jungle trays of 12 cups with printed sleeves showing strawberry, orange and apple",
       sizeAlt: "Jelly Jungle cup measuring 7 cm high and 5.7 cm across",
     },
+  },
+
+  jellyDrinks: {
+    hero: {
+      title: "Jelly Jungle Jelly Drinks",
+      text: "Drinkable fruit jelly in a 250 ml bottle with a screw cap. Three flavours, supplied by the carton or by the container.",
+    },
+    flavours: {
+      title: "Three Flavours",
+      text: "Every bottle carries the Jelly Jungle label in its own flavour colour, so the range is easy to spot on the shelf.",
+    },
+    descriptions: {
+      pineapple: "Tropical pineapple, sweet with a zesty finish.",
+      orange: "Juicy orange with a gentle citrus tang.",
+      mango: "Smooth, sunny mango, rich and tropical.",
+    } satisfies Record<DrinkSlug, string>,
+    facts: {
+      title: "Product Facts",
+      bottle: {
+        label: "Bottle",
+        value: (ml: string) => `${ml} ml, screw cap`,
+      },
+      flavours: { label: "Flavours" },
+      ingredients: {
+        label: "Ingredients",
+        value: "Water, sugar, carrageenan, flavourings, citric acid, colouring",
+      },
+      freeFrom: { label: "Free From", value: "Animal fat, pork fat and GMOs" },
+      supply: {
+        label: "Supply",
+        value: "By the carton or by the container. Ask us for current pack sizes.",
+      },
+    },
+    imageAlt: (name: string) => `Jelly Jungle ${name} jelly drink bottle`,
+    quoteMessage:
+      "Hello JM Trader, I'm interested in Jelly Jungle jelly drinks. Please send me a quote.",
+    flavourQuoteMessage: (flavour: string) =>
+      `Hello JM Trader, I'm interested in Jelly Jungle ${flavour} jelly drinks. Please send me a quote.`,
   },
 
   flavourPage: {
@@ -591,7 +656,7 @@ const en = {
       title: "Our Story",
       paragraphs: [
         "JM Trader started with a simple idea: businesses should be able to get dependable products without chasing several suppliers. We source directly from manufacturers, handle import and storage ourselves and deliver to our customers on clear terms.",
-        "Today we supply two product lines. Jelly Jungle cup jelly for retail and wholesale, and gastro packaging for restaurants and delivery services.",
+        "Today we supply three product lines. Jelly Jungle cup jelly and jelly drinks for retail and wholesale, and gastro packaging for restaurants and delivery services.",
       ],
       imageAlt:
         "JM Trader banner: general trading, import and export, global sourcing, reliable supply",
@@ -650,6 +715,7 @@ const en = {
       optional: "optional",
       interests: {
         jellyCups: "Jelly Cups",
+        jellyDrinks: "Jelly Drinks",
         pizzaBoxes: "Pizza Boxes",
         menuBoxes: "Menu Boxes",
         other: "Something Else",
@@ -826,17 +892,22 @@ const de: Content = {
     home: {
       title: "Jelly-Cups Und Gastro-Verpackungen Für Den Handel",
       description:
-        "JM Trader liefert Jelly Jungle Cup-Jelly in 14 Sorten sowie Gastro-Verpackungen an Einzelhandel, Großhandel und Gastronomie.",
+        "JM Trader liefert Jelly Jungle Cup-Jelly in 14 Sorten, Jelly-Drinks sowie Gastro-Verpackungen an Einzelhandel, Großhandel und Gastronomie.",
     },
     products: {
       title: "Produkte",
       description:
-        "Jelly Jungle Cup-Jelly und Gastro-Verpackungen von JM Trader.",
+        "Jelly Jungle Cup-Jelly, Jelly-Drinks und Gastro-Verpackungen von JM Trader.",
     },
     jellyCups: {
       title: "Jelly Jungle Jelly-Cups",
       description:
         "14 Sorten Jelly Jungle Cup-Jelly: vegetarisch, halal und ohne Maissirup mit hohem Fructosegehalt. 144 Becher pro Karton.",
+    },
+    jellyDrinks: {
+      title: "Jelly Jungle Jelly-Drinks",
+      description:
+        "Jelly Jungle Jelly-Drinks in der 250-ml-Flasche: Ananas, Orange und Mango. Lieferung im Karton oder Container.",
     },
     flavour: (name: string) => ({
       title: `Jelly-Cups ${name}`,
@@ -918,6 +989,7 @@ const de: Content = {
     home: "Start",
     products: "Produkte",
     jellyCups: "Jelly-Cups",
+    jellyDrinks: "Jelly-Drinks",
     packaging: "Verpackungen",
     wholesale: "Großhandel",
     about: "Über Uns",
@@ -931,7 +1003,7 @@ const de: Content = {
 
   footer: {
     tagline:
-      "Handel, Import und Export. Jelly Jungle Cup-Jelly und Gastro-Verpackungen für Einzelhandel, Großhandel und Gastronomie.",
+      "Handel, Import und Export. Jelly Jungle Cup-Jelly, Jelly-Drinks und Gastro-Verpackungen für Einzelhandel, Großhandel und Gastronomie.",
     columns: {
       products: "Produkte",
       company: "Unternehmen",
@@ -1048,6 +1120,11 @@ const de: Content = {
       text: "Cup-Jelly mit Fruchtgeschmack in 14 Sorten. Vegetarisch, halal und ohne Maissirup mit hohem Fructosegehalt.",
       cta: "Jelly-Cups Entdecken",
     },
+    jellyDrinks: {
+      title: "Jelly Jungle Jelly-Drinks",
+      text: "Trinkbares Fruchtgelee in der 250-ml-Flasche, in Ananas, Orange und Mango.",
+      cta: "Jelly-Drinks Entdecken",
+    },
     packaging: {
       title: "Gastro-Verpackungen",
       text: "Pizzakartons, Calzone-Boxen und Menüboxen ab 100 Stück, in Kraftbraun oder mit Ihrer Marke bedruckt.",
@@ -1086,16 +1163,30 @@ const de: Content = {
   home: {
     hero: {
       title: "Zuverlässiger Großhandel Für Händler",
-      text: "JM Trader importiert Jelly Jungle Cup-Jelly in 14 Sorten und liefert Gastro-Verpackungen an Einzelhandel, Großhandel und Gastronomie.",
+      text: "JM Trader importiert Jelly Jungle Jelly-Cups und Jelly-Drinks und liefert Gastro-Verpackungen an Einzelhandel, Großhandel und Gastronomie.",
       pickerLabel: "Sorte Wählen",
     },
     flavours: {
       title: "14 Sorten, Ein Unverwechselbarer Becher",
       text: "Jeder Jelly Jungle Becher hat dieselbe Form und denselben Deckel. So wirkt auch ein gemischtes Sortiment im Regal einheitlich.",
     },
+    production: {
+      title: "So Entsteht Jelly Jungle",
+      text: "Aufnahmen aus der Jelly Jungle Produktion, in der die Becher abgefüllt, versiegelt und gekühlt werden.",
+      videos: {
+        sealing: {
+          title: "Abgefüllt Und Versiegelt",
+          text: "Die Becher verlassen die Siegelanlage in Reihen und fallen direkt in ein Wasserbad.",
+        },
+        cooling: {
+          title: "Gespült Und Gekühlt",
+          text: "Die versiegelten Becher werden unter fließendem Wasser gespült und gekühlt.",
+        },
+      },
+    },
     lines: {
-      title: "Zwei Produktlinien",
-      text: "Snacks fürs Regal und Verpackungen für die Küche, aus einer Hand.",
+      title: "Drei Produktlinien",
+      text: "Snacks und Drinks fürs Regal, Verpackungen für die Küche, alles aus einer Hand.",
     },
     about: {
       title: "Ein Handelspartner, Kein Zwischenhändler",
@@ -1107,7 +1198,7 @@ const de: Content = {
   products: {
     hero: {
       title: "Produkte",
-      text: "Jelly Jungle Cup-Jelly für Einzel- und Großhandel sowie Gastro-Verpackungen für die Gastronomie.",
+      text: "Jelly Jungle Cup-Jelly und Jelly-Drinks für Einzel- und Großhandel sowie Gastro-Verpackungen für die Gastronomie.",
     },
     downloads: {
       title: "Produktkataloge",
@@ -1153,6 +1244,47 @@ const de: Content = {
         "Jelly Jungle Schalen mit 12 Bechern und bedruckter Banderole in Erdbeere, Orange und Apfel",
       sizeAlt: "Jelly Jungle Becher, 7 cm hoch und 5,7 cm im Durchmesser",
     },
+  },
+
+  jellyDrinks: {
+    hero: {
+      title: "Jelly Jungle Jelly-Drinks",
+      text: "Trinkbares Fruchtgelee in der 250-ml-Flasche mit Schraubverschluss. Drei Sorten, geliefert im Karton oder im Container.",
+    },
+    flavours: {
+      title: "Drei Sorten",
+      text: "Jede Flasche trägt das Jelly Jungle Etikett in ihrer eigenen Sortenfarbe. So ist das Sortiment im Regal leicht zu erkennen.",
+    },
+    descriptions: {
+      pineapple: "Tropische Ananas, süß mit spritzigem Abgang.",
+      orange: "Saftige Orange mit milder Zitrusnote.",
+      mango: "Vollmundige tropische Mango mit sonniger Süße.",
+    },
+    facts: {
+      title: "Produktdetails",
+      bottle: {
+        label: "Flasche",
+        value: (ml: string) => `${ml} ml, Schraubverschluss`,
+      },
+      flavours: { label: "Sorten" },
+      ingredients: {
+        label: "Zutaten",
+        value: "Wasser, Zucker, Carrageen, Aromen, Citronensäure, Farbstoff",
+      },
+      freeFrom: {
+        label: "Frei Von",
+        value: "Tierischem Fett, Schweinefett und Gentechnik",
+      },
+      supply: {
+        label: "Lieferung",
+        value: "Im Karton oder im Container. Fragen Sie uns nach den aktuellen Gebindegrößen.",
+      },
+    },
+    imageAlt: (name: string) => `Jelly Jungle Jelly-Drink ${name} in der Flasche`,
+    quoteMessage:
+      "Hallo JM Trader, ich interessiere mich für Jelly Jungle Jelly-Drinks. Bitte senden Sie mir ein Angebot.",
+    flavourQuoteMessage: (flavour: string) =>
+      `Hallo JM Trader, ich interessiere mich für Jelly Jungle Jelly-Drinks der Sorte ${flavour}. Bitte senden Sie mir ein Angebot.`,
   },
 
   flavourPage: {
@@ -1398,7 +1530,7 @@ const de: Content = {
       title: "Unsere Geschichte",
       paragraphs: [
         "JM Trader entstand aus einer einfachen Idee: Unternehmen sollen verlässliche Produkte bekommen, ohne mehreren Lieferanten hinterherzulaufen. Wir beziehen direkt bei Herstellern, übernehmen Import und Lagerung selbst und beliefern unsere Kunden zu klaren Konditionen.",
-        "Heute führen wir zwei Produktlinien: Jelly Jungle Cup-Jelly für Einzel- und Großhandel sowie Gastro-Verpackungen für Restaurants und Lieferdienste.",
+        "Heute führen wir drei Produktlinien: Jelly Jungle Cup-Jelly und Jelly-Drinks für Einzel- und Großhandel sowie Gastro-Verpackungen für Restaurants und Lieferdienste.",
       ],
       imageAlt:
         "JM Trader Banner: Allgemeiner Handel, Import und Export, globale Beschaffung, verlässliche Lieferung",
@@ -1457,6 +1589,7 @@ const de: Content = {
       optional: "optional",
       interests: {
         jellyCups: "Jelly-Cups",
+        jellyDrinks: "Jelly-Drinks",
         pizzaBoxes: "Pizzakartons",
         menuBoxes: "Menüboxen",
         other: "Etwas Anderes",

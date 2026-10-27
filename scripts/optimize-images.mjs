@@ -26,10 +26,15 @@ const flyers = fs
 
 const menuBoxes = [1, 2, 3, 4, 5].map((n) => `packaging/menu-box-${n}.jpg`);
 
+const drinkBottles = ["mango", "orange", "pinapple"].map(
+  (name) => `jelly-bottles/drink_${name}.png`,
+);
+
 const jobs = [
   ...flavourRenders.map((src) => ({ src, maxW: 900, q: 82 })),
   ...flyers.map((src) => ({ src, maxW: 900, q: 74 })),
   ...menuBoxes.map((src) => ({ src, maxW: 560, q: 80 })),
+  ...drinkBottles.map((src) => ({ src, maxW: 900, q: 82 })),
   { src: "packaging/pizza-box-range.jpg", maxW: 1600, q: 76 },
   { src: "packaging/pizza-box-branded.jpg", maxW: 1024, q: 78 },
   { src: "packaging/brand-banner.jpg", maxW: 1600, q: 78 },

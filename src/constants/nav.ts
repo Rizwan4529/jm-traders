@@ -12,6 +12,7 @@ export const ROUTES = {
   home: "/",
   products: "/products",
   jellyCups: "/products/jelly-cups",
+  jellyDrinks: "/products/jelly-drinks",
   packaging: "/products/packaging",
   wholesale: "/wholesale",
   about: "/about",
@@ -34,6 +35,7 @@ export const mainNav: NavLinkItem[] = [
 export const footerNav = {
   products: [
     { key: "jellyCups", href: ROUTES.jellyCups },
+    { key: "jellyDrinks", href: ROUTES.jellyDrinks },
     { key: "packaging", href: ROUTES.packaging },
     { key: "catalogue", href: ROUTES.catalogue },
   ],

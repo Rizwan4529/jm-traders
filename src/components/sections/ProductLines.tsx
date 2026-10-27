@@ -3,6 +3,7 @@ import pizzaBoxBranded from "../../assets/packaging/pizza-box-branded.webp";
 import { ROUTES } from "../../constants/nav";
 import { useContent } from "../../i18n/useContent";
 import Button from "../ui/Button";
+import BottleCluster from "./drinks/BottleCluster";
 import CupCluster from "./flavours/CupCluster";
 
 const ProductLineCard = ({
@@ -38,11 +39,16 @@ const ProductLines = () => {
   const { t } = useContent();
 
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       <ProductLineCard
         {...t.productLines.jellyCups}
         href={ROUTES.jellyCups}
         visual={<CupCluster className="size-full" />}
+      />
+      <ProductLineCard
+        {...t.productLines.jellyDrinks}
+        href={ROUTES.jellyDrinks}
+        visual={<BottleCluster className="size-full" />}
       />
       <ProductLineCard
         {...t.productLines.packaging}

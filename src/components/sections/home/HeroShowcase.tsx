@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState, type CSSProperties } from "react";
 import packagingBox from "../../../assets/generated/packaging-box.webp";
 import { ROUTES } from "../../../constants/nav";
+import { getDrink } from "../../../data/drinks";
 import { flavours } from "../../../data/flavours";
 import { useContent } from "../../../i18n/useContent";
 import { cx } from "../../../lib/cx";
@@ -9,6 +10,7 @@ import SmartLink from "../../ui/SmartLink";
 
 const SLIDE_MS = 4500;
 const cup = flavours[0];
+const bottle = getDrink("mango");
 
 /** Auto-advancing hero slider: one slide per product line. */
 const HeroShowcase = () => {
@@ -27,6 +29,16 @@ const HeroShowcase = () => {
       width: 575,
       height: 375,
       glow: cup.color,
+    },
+    {
+      key: "jellyDrinks",
+      label: t.nav.jellyDrinks,
+      href: ROUTES.jellyDrinks,
+      image: bottle.image,
+      alt: t.jellyDrinks.imageAlt(t.flavours[bottle.slug].name),
+      width: 575,
+      height: 575,
+      glow: bottle.color,
     },
     {
       key: "packaging",

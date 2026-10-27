@@ -21,7 +21,13 @@ type FormValues = {
 
 type FormErrors = Partial<Record<"name" | "email" | "message", string>>;
 
-const INTERESTS: Interest[] = ["jellyCups", "pizzaBoxes", "menuBoxes", "other"];
+const INTERESTS: Interest[] = [
+  "jellyCups",
+  "jellyDrinks",
+  "pizzaBoxes",
+  "menuBoxes",
+  "other",
+];
 
 const initialValues: FormValues = {
   name: "",

@@ -5,9 +5,11 @@ import { useContent } from "../../i18n/useContent";
 import CtaBanner from "../sections/CtaBanner";
 import FlavourGrid from "../sections/flavours/FlavourGrid";
 import HomeHero from "../sections/home/HomeHero";
+import ProductionVideos from "../sections/home/ProductionVideos";
 import ProductLines from "../sections/ProductLines";
 import ServicesSection from "../sections/ServicesSection";
-import UnitBreakdown from "../sections/UnitBreakdown";
+// Unit breakdown section is hidden for now — restore together with the JSX below.
+// import UnitBreakdown from "../sections/UnitBreakdown";
 import Button from "../ui/Button";
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
@@ -37,6 +39,7 @@ const HomePage = () => {
         </div>
       </Section>
 
+      {/* Unit breakdown section is hidden for now.
       <Section tone="surface">
         <SectionHeading
           title={t.units.title}
@@ -51,6 +54,9 @@ const HomePage = () => {
           <UnitBreakdown />
         </div>
       </Section>
+      */}
+
+      <ProductionVideos />
 
       <Section tone="muted">
         <SectionHeading title={t.home.lines.title} description={t.home.lines.text} />

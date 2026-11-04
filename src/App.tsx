@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import BackgroundWatermark from "./components/layout/BackgroundWatermark";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import SkipLink from "./components/layout/SkipLink";
@@ -25,28 +26,31 @@ const App = () => {
     <LanguageProvider>
       <ScrollToTop />
       <SkipLink />
-      <Navbar />
-      {/* Pulled up under the transparent navbar; every page opens on navy. */}
-      <main id={MAIN_CONTENT_ID} className="-mt-19 flex-1 sm:-mt-22">
-        <Routes>
-          <Route path={ROUTES.home} element={<HomePage />} />
-          <Route path={ROUTES.products} element={<ProductsPage />} />
-          <Route path={ROUTES.jellyCups} element={<JellyCupsPage />} />
-          <Route path={`${ROUTES.jellyCups}/:slug`} element={<FlavourPage />} />
-          <Route path={ROUTES.jellyDrinks} element={<JellyDrinksPage />} />
-          <Route path={ROUTES.packaging} element={<PackagingPage />} />
-          <Route path={ROUTES.wholesale} element={<WholesalePage />} />
-          <Route path={ROUTES.about} element={<AboutPage />} />
-          <Route path={ROUTES.catalogue} element={<CataloguePage />} />
-          <Route path={ROUTES.contact} element={<ContactPage />} />
-          {/* Legal notice disabled for now:
-          <Route path={ROUTES.imprint} element={<LegalPage variant="imprint" />} /> */}
-          <Route path={ROUTES.privacy} element={<LegalPage variant="privacy" />} />
-          <Route path={ROUTES.terms} element={<LegalPage variant="terms" />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
-      <Footer />
+      <BackgroundWatermark />
+      <div className="relative z-[1] flex min-h-dvh flex-1 flex-col">
+        <Navbar />
+        {/* Pulled up under the transparent navbar; every page opens on navy. */}
+        <main id={MAIN_CONTENT_ID} className="-mt-19 flex-1 sm:-mt-22">
+          <Routes>
+            <Route path={ROUTES.home} element={<HomePage />} />
+            <Route path={ROUTES.products} element={<ProductsPage />} />
+            <Route path={ROUTES.jellyCups} element={<JellyCupsPage />} />
+            <Route path={`${ROUTES.jellyCups}/:slug`} element={<FlavourPage />} />
+            <Route path={ROUTES.jellyDrinks} element={<JellyDrinksPage />} />
+            <Route path={ROUTES.packaging} element={<PackagingPage />} />
+            <Route path={ROUTES.wholesale} element={<WholesalePage />} />
+            <Route path={ROUTES.about} element={<AboutPage />} />
+            <Route path={ROUTES.catalogue} element={<CataloguePage />} />
+            <Route path={ROUTES.contact} element={<ContactPage />} />
+            {/* Legal notice disabled for now:
+            <Route path={ROUTES.imprint} element={<LegalPage variant="imprint" />} /> */}
+            <Route path={ROUTES.privacy} element={<LegalPage variant="privacy" />} />
+            <Route path={ROUTES.terms} element={<LegalPage variant="terms" />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
       <FloatingWhatsApp />
     </LanguageProvider>
   );

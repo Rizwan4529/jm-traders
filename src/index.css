@@ -31,11 +31,12 @@
   }
 
   body {
-    @apply m-0 min-h-screen bg-surface-muted font-body text-text antialiased;
+    /* Navy base so the fixed watermark stays visible behind translucent sections. */
+    @apply m-0 min-h-screen bg-brand font-body text-text antialiased;
   }
 
   #root {
-    @apply flex min-h-screen flex-col;
+    @apply relative flex min-h-screen flex-col;
   }
 
   ::selection {

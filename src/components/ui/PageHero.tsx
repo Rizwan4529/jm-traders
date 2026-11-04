@@ -25,7 +25,7 @@ const PageHero = ({
   return (
     <section
       className={cx(
-        "relative overflow-hidden bg-brand pt-32 pb-16 text-white sm:pt-40 sm:pb-20 lg:pb-24",
+        "relative overflow-hidden bg-transparent pt-32 pb-16 text-white sm:pt-40 sm:pb-20 lg:pb-24",
         className,
       )}
     >

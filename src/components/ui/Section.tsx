@@ -11,10 +11,11 @@ type SectionProps = HTMLAttributes<HTMLElement> & {
 };
 
 const toneClasses: Record<SectionTone, string> = {
-  surface: "bg-surface text-text",
-  muted: "bg-surface-muted text-text",
-  kraft: "bg-kraft-light text-text",
-  brand: "bg-brand text-white",
+  /* Soft alpha so the coloured watermark can whisper through light sections. */
+  surface: "bg-surface/92 text-text",
+  muted: "bg-surface-muted/90 text-text",
+  kraft: "bg-kraft-light/92 text-text",
+  brand: "bg-transparent text-white",
 };
 
 const Section = ({

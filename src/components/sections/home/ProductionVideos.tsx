@@ -17,6 +17,15 @@ const ProductionVideos = () => {
     });
   };
 
+  /** Native controls can unmute — force silence every time. */
+  const keepMuted = (event: SyntheticEvent<HTMLVideoElement>) => {
+    const video = event.currentTarget;
+    if (!video.muted || video.volume > 0) {
+      video.muted = true;
+      video.volume = 0;
+    }
+  };
+
   return (
     <Section tone="surface">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:items-center lg:gap-16">
@@ -33,10 +42,12 @@ const ProductionVideos = () => {
                       src={video.src}
                       poster={video.poster}
                       controls
+                      muted
                       playsInline
                       preload="metadata"
                       aria-label={title}
                       onPlay={pauseOthers}
+                      onVolumeChange={keepMuted}
                       className="mx-auto aspect-9/16 w-full max-w-sm rounded-2xl border border-border bg-brand object-cover"
                     />
                     <figcaption className="mx-auto mt-4 max-w-sm">

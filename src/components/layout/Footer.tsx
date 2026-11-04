@@ -42,7 +42,7 @@ const Footer = () => {
   const { columns } = t.footer;
 
   return (
-    <footer className="border-t-2 border-accent bg-footer text-white">
+    <footer className="relative border-t-2 border-accent bg-footer/88 text-white">
       <Container>
         <InView variants={fadeUp} amount={0.1} className="pt-14 pb-24 sm:pb-8 lg:pt-16">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.3fr)_repeat(3,minmax(0,0.6fr))_minmax(0,1fr)] lg:gap-10">

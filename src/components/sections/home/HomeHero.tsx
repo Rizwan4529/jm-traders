@@ -22,7 +22,7 @@ const HomeHero = () => {
   });
 
   return (
-    <section className="relative overflow-hidden bg-brand pt-32 pb-16 text-white sm:pt-40 lg:pb-24">
+    <section className="relative overflow-hidden bg-transparent pt-32 pb-16 text-white sm:pt-40 lg:pb-24">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 right-[-10%] size-[42rem] rounded-full bg-royal/25 blur-3xl"

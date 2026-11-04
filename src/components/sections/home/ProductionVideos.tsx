@@ -34,6 +34,7 @@ const ProductionVideos = () => {
         <ul ref={listRef} className="grid gap-6 sm:grid-cols-2">
           {PRODUCTION_VIDEOS.map((video, index) => {
             const { title, text } = copy.videos[video.id];
+            const forceMute = index === 0;
             return (
               <li key={video.id}>
                 <InView delay={index * 0.1}>
@@ -42,12 +43,12 @@ const ProductionVideos = () => {
                       src={video.src}
                       poster={video.poster}
                       controls
-                      muted
+                      muted={forceMute}
                       playsInline
                       preload="metadata"
                       aria-label={title}
                       onPlay={pauseOthers}
-                      onVolumeChange={keepMuted}
+                      onVolumeChange={forceMute ? keepMuted : undefined}
                       className="mx-auto aspect-9/16 w-full max-w-sm rounded-2xl border border-border bg-brand object-cover"
                     />
                     <figcaption className="mx-auto mt-4 max-w-sm">

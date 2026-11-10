@@ -25,7 +25,7 @@ const en = {
     home: {
       title: "Jelly Cups And Gastro Packaging For Trade",
       description:
-        "JM Trader supplies Jelly Jungle cup jelly in 14 flavours, jelly drinks and gastro packaging to retailers, wholesalers and restaurants.",
+        "JM Trader supplies Jelly Jungle cup jelly in 12 flavours, jelly drinks and gastro packaging to retailers, wholesalers and restaurants.",
     },
     products: {
       title: "Products",
@@ -35,7 +35,7 @@ const en = {
     jellyCups: {
       title: "Jelly Jungle Jelly Cups",
       description:
-        "14 flavours of Jelly Jungle cup jelly: vegetarian, halal and without high-fructose corn syrup. 144 cups per carton.",
+        "12 flavours of Jelly Jungle cup jelly: vegetarian, halal and without high-fructose corn syrup. 144 cups per carton.",
     },
     jellyDrinks: {
       title: "Jelly Jungle Jelly Drinks",
@@ -93,6 +93,7 @@ const en = {
     brand: "JM Trader",
     requestQuote: "Request A Quote",
     viewFlavours: "See All Flavours",
+    viewProducts: "See All Products",
     viewDetails: "View Details",
     downloadCatalogue: "Download Catalogue",
     quoteMessage: "Hello JM Trader, I'd like to request a quote.",
@@ -249,7 +250,7 @@ const en = {
   productLines: {
     jellyCups: {
       title: "Jelly Jungle Jelly Cups",
-      text: "Fruit-flavoured cup jelly in 14 flavours. Vegetarian, halal and made without high-fructose corn syrup.",
+      text: "Fruit-flavoured cup jelly in 12 flavours. Vegetarian, halal and made without high-fructose corn syrup.",
       cta: "Explore Jelly Cups",
     },
     jellyDrinks: {
@@ -299,7 +300,7 @@ const en = {
       pickerLabel: "Choose A Flavour",
     },
     flavours: {
-      title: "14 Flavours, One Recognisable Cup",
+      title: "12 Flavours, One Recognisable Cup",
       text: "Every Jelly Jungle cup has the same shape and lid, so a mixed range looks consistent on the shelf.",
     },
     production: {
@@ -341,7 +342,7 @@ const en = {
   jellyCups: {
     hero: {
       title: "Jelly Jungle Jelly Cups",
-      text: "Fruit-flavoured cup jelly in 14 flavours, supplied by the carton or by the container.",
+      text: "Fruit-flavoured cup jelly in 12 flavours, supplied by the carton or by the container.",
     },
     flavours: {
       title: "All Flavours",
@@ -616,7 +617,7 @@ const en = {
         {
           question: "Which jelly cup flavours are available?",
           answer:
-            "All 14 Jelly Jungle flavours, from strawberry and mango to mint, rose and vanilla. You'll find the full range on the jelly cups page.",
+            "All 12 Jelly Jungle flavours, from strawberry and mango to mint, rose and vanilla. You'll find the full range on the jelly cups page.",
         },
         {
           question: "How are the jelly cups packed?",
@@ -676,7 +677,7 @@ const en = {
     items: {
       jelly: {
         title: "Jelly Jungle Flavours",
-        text: "Flyers for all 14 flavours, cup size, packing units and container loads.",
+        text: "Flyers for all 12 flavours, cup size, packing units and container loads.",
         meta: "PDF, 17 pages",
       },
       packaging: {
@@ -892,7 +893,7 @@ const de: Content = {
     home: {
       title: "Jelly-Cups Und Gastro-Verpackungen Für Den Handel",
       description:
-        "JM Trader liefert Jelly Jungle Cup-Jelly in 14 Sorten, Jelly-Drinks sowie Gastro-Verpackungen an Einzelhandel, Großhandel und Gastronomie.",
+        "JM Trader liefert Jelly Jungle Cup-Jelly in 12 Sorten, Jelly-Drinks sowie Gastro-Verpackungen an Einzelhandel, Großhandel und Gastronomie.",
     },
     products: {
       title: "Produkte",
@@ -902,7 +903,7 @@ const de: Content = {
     jellyCups: {
       title: "Jelly Jungle Jelly-Cups",
       description:
-        "14 Sorten Jelly Jungle Cup-Jelly: vegetarisch, halal und ohne Maissirup mit hohem Fructosegehalt. 144 Becher pro Karton.",
+        "12 Sorten Jelly Jungle Cup-Jelly: vegetarisch, halal und ohne Maissirup mit hohem Fructosegehalt. 144 Becher pro Karton.",
     },
     jellyDrinks: {
       title: "Jelly Jungle Jelly-Drinks",
@@ -961,6 +962,7 @@ const de: Content = {
     brand: "JM Trader",
     requestQuote: "Angebot Anfragen",
     viewFlavours: "Alle Sorten Ansehen",
+    viewProducts: "Alle Produkte Ansehen",
     viewDetails: "Details Ansehen",
     downloadCatalogue: "Katalog Herunterladen",
     quoteMessage: "Hallo JM Trader, ich möchte ein Angebot anfragen.",
@@ -1117,7 +1119,7 @@ const de: Content = {
   productLines: {
     jellyCups: {
       title: "Jelly Jungle Jelly-Cups",
-      text: "Cup-Jelly mit Fruchtgeschmack in 14 Sorten. Vegetarisch, halal und ohne Maissirup mit hohem Fructosegehalt.",
+      text: "Cup-Jelly mit Fruchtgeschmack in 12 Sorten. Vegetarisch, halal und ohne Maissirup mit hohem Fructosegehalt.",
       cta: "Jelly-Cups Entdecken",
     },
     jellyDrinks: {
@@ -1167,7 +1169,7 @@ const de: Content = {
       pickerLabel: "Sorte Wählen",
     },
     flavours: {
-      title: "14 Sorten, Ein Unverwechselbarer Becher",
+      title: "12 Sorten, Ein Unverwechselbarer Becher",
       text: "Jeder Jelly Jungle Becher hat dieselbe Form und denselben Deckel. So wirkt auch ein gemischtes Sortiment im Regal einheitlich.",
     },
     production: {
@@ -1209,7 +1211,7 @@ const de: Content = {
   jellyCups: {
     hero: {
       title: "Jelly Jungle Jelly-Cups",
-      text: "Cup-Jelly mit Fruchtgeschmack in 14 Sorten, geliefert im Karton oder im Container.",
+      text: "Cup-Jelly mit Fruchtgeschmack in 12 Sorten, geliefert im Karton oder im Container.",
     },
     flavours: {
       title: "Alle Sorten",
@@ -1490,7 +1492,7 @@ const de: Content = {
         {
           question: "Welche Jelly-Cup-Sorten gibt es?",
           answer:
-            "Alle 14 Jelly Jungle Sorten, von Erdbeere und Mango bis Minze, Rose und Vanille. Das komplette Sortiment finden Sie auf der Jelly-Cups-Seite.",
+            "Alle 12 Jelly Jungle Sorten, von Erdbeere und Mango bis Minze, Rose und Vanille. Das komplette Sortiment finden Sie auf der Jelly-Cups-Seite.",
         },
         {
           question: "Wie sind die Jelly-Cups verpackt?",
@@ -1550,7 +1552,7 @@ const de: Content = {
     items: {
       jelly: {
         title: "Jelly Jungle Sorten",
-        text: "Flyer für alle 14 Sorten, Bechergröße, Verpackungseinheiten und Containerladungen.",
+        text: "Flyer für alle 12 Sorten, Bechergröße, Verpackungseinheiten und Containerladungen.",
         meta: "PDF, 17 Seiten",
       },
       packaging: {

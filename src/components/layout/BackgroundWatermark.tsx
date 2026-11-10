@@ -1,15 +1,37 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import logo from "../../assets/logo.webp";
 
 /**
- * Fixed, low-opacity brand mark centered in the viewport.
- * Sits behind page content; `mix-blend-screen` drops the logo's black plate
- * while keeping the gold/blue colour.
+ * Fixed brand mark behind page content. Hidden while the page opener/hero
+ * is on screen, then fades in from the second section onward.
  */
 const BackgroundWatermark = () => {
+  const { pathname } = useLocation();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const opener = document.querySelector("[data-page-opener]");
+    if (!opener) {
+      setVisible(true);
+      return;
+    }
+
+    setVisible(false);
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(!entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(opener);
+    return () => observer.disconnect();
+  }, [pathname]);
+
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden"
+      className={`pointer-events-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden transition-opacity duration-500 ${
+        visible ? "opacity-100" : "opacity-0"
+      }`}
     >
       <img
         src={logo}

@@ -24,6 +24,7 @@ const PageHero = ({
 }: PageHeroProps) => {
   return (
     <section
+      data-page-opener
       className={cx(
         "relative overflow-hidden bg-transparent pt-32 pb-16 text-white sm:pt-40 sm:pb-20 lg:pb-24",
         className,

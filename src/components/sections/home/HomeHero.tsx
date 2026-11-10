@@ -88,21 +88,9 @@ const HomeHero = () => {
               <span className="size-1.5 rotate-45 border border-accent/70" />
               <span className="h-px flex-1 bg-accent/35" />
             </div>
-            <StampLinks
-              links={[
-                { label: t.nav.wholesale, href: ROUTES.wholesale },
-                { label: t.nav.products, href: ROUTES.products },
-                { label: t.nav.about, href: ROUTES.about },
-                {
-                  label: t.common.requestQuote,
-                  href: whatsappLink(t.common.quoteMessage),
-                  accent: true,
-                },
-              ]}
-            />
           </motion.div>
 
-          {/* Brand logo — height-capped so the card keeps its size */}
+          {/* Brand logo */}
           <motion.img
             {...rise(0.06)}
             src={logo}
@@ -111,7 +99,7 @@ const HomeHero = () => {
             height={386}
             decoding="async"
             draggable={false}
-            className="relative h-32 w-auto select-none drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)] sm:h-48 lg:h-56"
+            className="relative h-40 w-auto select-none drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)] sm:h-60 lg:h-80"
           />
 
           {/* sr-only h1 is absolutely positioned, so it adds no flex gap. */}
@@ -155,8 +143,11 @@ const HomeHero = () => {
             <StampLinks
               links={[
                 { label: t.common.viewProducts, href: ROUTES.products },
-                { label: t.nav.contact, href: ROUTES.contact },
-                { label: t.common.brand, href: ROUTES.home, accent: true },
+                {
+                  label: t.common.requestQuote,
+                  href: whatsappLink(t.common.quoteMessage),
+                  accent: true,
+                },
               ]}
             />
           </motion.div>

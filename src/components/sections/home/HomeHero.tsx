@@ -11,19 +11,23 @@ import StampFrame from "./StampFrame";
 
 type StampLink = { label: string; href: string; accent?: boolean };
 
-/** Dot-separated, small-caps link row used in the stamp header and footer bands. */
+/**
+ * Small-caps link row used in the stamp bands: stacked and centred on mobile,
+ * dot-separated on one line from `sm` up.
+ */
 const StampLinks = ({ links }: { links: StampLink[] }) => (
-  <nav className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-1 px-1 text-center text-[0.65rem] tracking-[0.18em] uppercase sm:px-2 sm:text-[0.7rem]">
+  <nav className="flex w-full flex-col items-center justify-center gap-2.5 px-1 text-center text-[0.65rem] tracking-[0.18em] uppercase sm:flex-row sm:gap-4 sm:px-2 sm:text-[0.7rem]">
     {links.map(({ label, href, accent }, i) => (
-      <span key={href} className="flex items-center gap-x-4">
+      <span key={href} className="flex items-center gap-4">
         {i > 0 && (
-          <span aria-hidden="true" className="text-accent/50">
+          <span aria-hidden="true" className="hidden text-accent/50 sm:inline">
             ·
           </span>
         )}
+        {/* Negative right margin cancels the trailing letter-spacing so text centres exactly. */}
         <SmartLink
           href={href}
-          className={`rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
+          className={`-mr-[0.18em] rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
             accent
               ? "text-accent/80 hover:text-accent"
               : "text-white/45 hover:text-white"
